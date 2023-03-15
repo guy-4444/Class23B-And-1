@@ -8,7 +8,7 @@ import android.view.View;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Activity_Main extends AppCompatActivity {
 
     MaterialTextView main_LBL_name;
     MaterialTextView main_LBL_greeting;
@@ -43,3 +43,32 @@ public class MainActivity extends AppCompatActivity {
         main_LBL_name.setText(title);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

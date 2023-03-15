@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activity_Main">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/main_LBL_name"
@@ -42,5 +42,43 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/click_here"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@id/main_BTN_clickHere"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#6A999999">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/purple_500"
+            app:strokeWidth="2dp"
+            app:cornerRadius="50dp"
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="8dp"
+            android:text="Secong Button" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/btn2"
+            android:layout_alignStart="@id/btn2"
+            android:layout_alignEnd="@id/btn2"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Second" />
+
+
+    </RelativeLayout>
+
 
 </RelativeLayout >
