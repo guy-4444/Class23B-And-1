@@ -5,7 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Activity_Game">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/game_IMG_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/img_back_s"
+        android:scaleType="centerCrop"
+        android:alpha="0.3"
+        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/game_LBL_score"
@@ -65,12 +75,22 @@
         android:id="@+id/game_LBL_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/game_IMG_animal"
+        android:layout_above="@id/game_PRG_question"
         android:layout_centerInParent="true"
         android:text="000"
         android:textColor="#000000"
         android:textSize="32sp"
         android:textStyle="bold" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        app:trackThickness="20dp"
+        android:id="@+id/game_PRG_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:layout_alignStart="@id/game_IMG_animal"
+        android:layout_alignEnd="@id/game_IMG_animal"
+        android:layout_above="@id/game_IMG_animal"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/game_IMG_animal"

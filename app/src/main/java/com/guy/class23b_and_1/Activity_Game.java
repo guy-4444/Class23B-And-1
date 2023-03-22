@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
@@ -23,10 +25,12 @@ public class Activity_Game extends AppCompatActivity {
     private AppCompatImageView game_IMG_heart2;
     private AppCompatImageView game_IMG_heart3;
     private AppCompatImageView game_IMG_animal;
+    private AppCompatImageView game_IMG_back;
     private MaterialTextView game_LBL_score;
     private MaterialTextView game_LBL_name;
     private MaterialButton game_BTN_no;
     private MaterialButton game_BTN_yes;
+    private LinearProgressIndicator game_PRG_question;
 
     private int index = 0;
     private int lives = 3;
@@ -71,6 +75,7 @@ public class Activity_Game extends AppCompatActivity {
         questions.add(new Question().setName("yak").setImage(R.drawable.img_yak).setKosher(true));
         questions.add(new Question().setName("zebra").setImage(R.drawable.img_zebra).setKosher(false));
 
+        game_PRG_question.setMax(questions.size());
 
         updateUI();
     }
@@ -119,7 +124,7 @@ public class Activity_Game extends AppCompatActivity {
         Question question = questions.get(index);
         game_LBL_name.setText(question.getName());
         game_IMG_animal.setImageResource(question.getImage());
-
+        game_PRG_question.setProgress(index + 1);
     }
 
     private void refreshLivesUI() {
@@ -133,6 +138,17 @@ public class Activity_Game extends AppCompatActivity {
     }
 
     private void initViews() {
+//        Glide
+//                .with(Activity_Game.this)
+//                .load("https://freedesignfile.com/upload/2020/03/Farm-vector.jpg")
+//                .into(game_IMG_back);
+
+
+        Glide
+                .with(Activity_Game.this)
+                .load(R.drawable.img_back)
+                .into(game_IMG_back);
+
         game_BTN_no.setOnClickListener(v -> clicked(false));
         game_BTN_yes.setOnClickListener(v -> clicked(true));
     }
@@ -141,11 +157,13 @@ public class Activity_Game extends AppCompatActivity {
         game_IMG_heart1 = findViewById(R.id.game_IMG_heart1);
         game_IMG_heart2 = findViewById(R.id.game_IMG_heart2);
         game_IMG_heart3 = findViewById(R.id.game_IMG_heart3);
+        game_IMG_back = findViewById(R.id.game_IMG_back);
         game_IMG_animal = findViewById(R.id.game_IMG_animal);
         game_LBL_score = findViewById(R.id.game_LBL_score);
         game_LBL_name = findViewById(R.id.game_LBL_name);
         game_BTN_no = findViewById(R.id.game_BTN_no);
         game_BTN_yes = findViewById(R.id.game_BTN_yes);
+        game_PRG_question = findViewById(R.id.game_PRG_question);
 
         game_IMG_hearts = new AppCompatImageView[]{
                 game_IMG_heart1,
